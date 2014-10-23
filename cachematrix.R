@@ -26,7 +26,9 @@ makeCacheMatrix <- function(x = matrix()) {
     }
     # A$get returns the cached value.
     get <- function() x
-    setinv <- function(solve) xinv <<- solve
+    # A$setinv sets the solution to xinv
+    setinv <- function(solution) xinv <<- solution
+    # A$getinv retreives the value of xinv
     getinv <- function() xinv
     list(set = set, get = get,
          setinv = setinv,
